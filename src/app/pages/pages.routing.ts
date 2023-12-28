@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
 
 
 
@@ -15,6 +16,7 @@ const routes: Routes = [
     children:[
         { path: '', component: DashboardComponent  },
         { path: 'inicio', component: InicioComponent},    
+        { path: 'account-settings', component: AccountSettingsComponent },
         { path: '', redirectTo: '/dashboard', pathMatch: 'full' }
     ]
   }

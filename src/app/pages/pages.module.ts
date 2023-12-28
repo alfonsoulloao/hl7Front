@@ -10,13 +10,15 @@ import { ComponentsModule } from '../components/components.module';
 // componentes
 import { PagesComponent } from './pages.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
 
 
 
 @NgModule({
   declarations: [
     PagesComponent,
-    InicioComponent
+    InicioComponent,
+    AccountSettingsComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +28,8 @@ import { InicioComponent } from './inicio/inicio.component';
     ComponentsModule
   ],
   exports:[ 
-    PagesComponent
+    PagesComponent,
+    AccountSettingsComponent
   ]
 })
 export class PagesModule { }
