@@ -4,15 +4,12 @@ import { RouterModule } from '@angular/router';
 // componentes
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HeaderComponent } from './header/header.component';
-import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
-
 
 
 @NgModule({
   declarations: [
     SidebarComponent,
     HeaderComponent, 
-    BreadcrumbsComponent, 
   ],
   imports: [
     CommonModule,
@@ -20,8 +17,7 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
   ],
   exports:[
     SidebarComponent,
-    HeaderComponent, 
-    BreadcrumbsComponent, 
+    HeaderComponent,     
   ]
 })
 export class SharedModule { }
