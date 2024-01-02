@@ -12,6 +12,7 @@ export class SidebarService {
       submenu: [
         { titulo: 'dashboard', url: '/dashboard' },
         { titulo: 'inicio', url: '/dashboard/inicio' },        
+        { titulo: 'revisar', url: '/dashboard/revisar' },        
       ]
     },
   ];

@@ -11,6 +11,7 @@ import { ComponentsModule } from '../components/components.module';
 import { PagesComponent } from './pages.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { RevisarComponent } from './revisar/revisar.component';
 
 
 
@@ -18,7 +19,8 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
   declarations: [
     PagesComponent,
     InicioComponent,
-    AccountSettingsComponent
+    AccountSettingsComponent,
+    RevisarComponent
   ],
   imports: [
     CommonModule,
