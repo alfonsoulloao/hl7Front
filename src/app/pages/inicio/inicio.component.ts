@@ -7,18 +7,4 @@ import { Component } from '@angular/core';
 })
 export class InicioComponent {
 
-  progreso1: number = 40;
-  progreso2: number = 40;
-
-  get getprogreso1(){
-    return `${ this.progreso1 }%`;
-  }
-
-  get getprogreso2(){
-    return `${ this.progreso2 }%`;
-  }
-
-
-
-
 }

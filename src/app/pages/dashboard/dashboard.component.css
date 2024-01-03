@@ -1,0 +1,24 @@
+.et_pb_section_0.et_pb_section {
+    padding-top: 67px;
+    padding-right: 0px;
+    padding-bottom: 67.1875px;
+    padding-left: 0px;
+    background-color: rgba(0,106,193,0.77)!important;
+}
+
+div.et_pb_section.et_pb_section_0 {
+    background-image: url(https://hl7chile.cl/wp-content/uploads/2023/04/circle-background-pattern.png)!important;
+}
+
+
+.et_had_animation {
+    position: relative;
+}
+
+.et_pb_section {
+    position: relative;
+    background-color: #fff;
+    background-position: 50%;
+    background-size: 100%;
+    background-size: cover;
+}
