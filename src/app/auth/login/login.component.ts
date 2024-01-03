@@ -33,22 +33,32 @@ export class LoginComponent {
     }
        
     
-    this.loginService.login( loginValues )
+    this.loginService.loginService( loginValues )
       .subscribe( resp =>{
+        // respuesta exitosa
+        
+        if( this.loginForm.get('recuerdame').value){
+            console.log("entra al recuerdame true");
+            localStorage.setItem( 'email', this.loginForm.get('correo').value )
+        }else{
+          localStorage.removeItem('email');
+          console.log("entra al recuerdame false");
+
+        }
+
+        console.log("redirecciona");
+        this.router.navigateByUrl('/dashboard');
+        console.log("redirecciona  ================00");
+
         console.log(resp);
       }, (err)=>{
-
-        console.log("Entra en el error ");
+        // Arroja error con animacion 
         Swal.fire({
           icon: "error",
           title: "Oops...",
-          text: err.error.msg
+          text: err.error.message
         });
       });
-
-      
-
-    // this.router.navigateByUrl('/');
   }
 
 
