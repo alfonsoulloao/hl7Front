@@ -1,0 +1,57 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .seccion-antecedentes,
+  .seccion-indicacion,
+  .seccion-observacion {
+    width: 100%;
+    max-width: 600px; /* Ajusta según tus necesidades */
+    margin: 0 auto;
+  }
+  
+  .titulo-seccion {
+    text-align: center;
+  }
+  
+  .campos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .campo {
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  
+  .campo-responsivo {
+    flex: 1 1 calc(50% - 10px); /* 50% con un espacio de 10px entre campos */
+    margin-right: 10px;
+    box-sizing: border-box;
+  }
+  
+  .campo-responsivo > :nth-child(2n) {
+    margin-right: 0;
+  }
+  
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .botones {
+    text-align: center;
+    margin-top: 20px; /* Espacio entre secciones y botones */
+  }
+  
+  .botones button {
+    margin: 10px; /* Ajusta la separación entre botones */
+  }
+  
+  .alerta {
+    /* Estilos de la alerta */
+  }
+  

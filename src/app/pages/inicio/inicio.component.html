@@ -1,62 +1,164 @@
-<div class="row">
-    <div class="col-12">
-        <div class="card">
-            <div class="card-body">
-
-                <h4 style="display: flex;">Inicio Antecedentes del paciente</h4>
-                 <li>pais de origen (puede ser fijo tal vez )</li>
-                 <li>nacionalidad (puede ser fijo tal vez )</li>
-                 <li>sexo biologico (carga directa en html)</li>
-                 <li>lugar de nacimiento   (combobox)</li>
-                 <li>pueblo originario (true o false) </li>
-                 <li>rut (todo junto con guion)</li>
-                 <li>apellido paterno</li>
-                 <li>apellido materno</li>
-                 <li>nombre</li>
-                 <li>nombre (social)</li>
-                 <li>telefono</li>
-                 <li>fecha nacimiento (calendar que puede ser texto)</li>
-                 <li>genero  (combobox)</li>
-
-            </div>
+<form (ngSubmit)="guardarDatos()" #formulario="ngForm">
+    <div class="container">
+      <!-- Antecedentes del paciente -->
+      <div class="seccion-antecedentes">
+        <h2 class="titulo-seccion">Antecedentes del paciente</h2>
+  
+        <div class="campos-container">
+          <div class="campo campo-responsivo">
+            <select id="paisOrigen" name="paisOrigen" [(ngModel)]="datos.paisOrigen" required>
+              <option value="" disabled selected>País de origen</option>
+              <!-- Opciones para el combobox -->
+            </select>
+          </div>
+  
+          <div class="campo campo-responsivo">
+            <select id="nacionalidad" name="nacionalidad" [(ngModel)]="datos.nacionalidad" required>
+              <option value="" disabled selected>Nacionalidad</option>
+              <!-- Opciones para el combobox -->
+            </select>
+          </div>
+  
+          <div class="campo campo-responsivo">
+            <select id="sexoBiologico" name="sexoBiologico" [(ngModel)]="datos.sexoBiologico" required>
+              <option value="" disabled selected>Sexo biológico</option>
+              <!-- Opciones para el combobox -->
+            </select>
+          </div>
+  
+          <div class="campo campo-responsivo">
+            <select id="lugarNacimiento" name="lugarNacimiento" [(ngModel)]="datos.lugarNacimiento" required>
+              <option value="" disabled selected>Lugar de nacimiento</option>
+              <!-- Opciones para el combobox -->
+            </select>
+          </div>
+  
+          <div class="campo campo-responsivo">
+            <input type="checkbox" id="puebloOriginario" name="puebloOriginario" [(ngModel)]="datos.puebloOriginario">
+            <span>Pueblo originario</span>
+          </div>
+  
+          <div class="campo campo-responsivo">
+            <input type="text" id="rut" name="rut" [(ngModel)]="datos.rut" placeholder="RUT" required>
+          </div>
+  
+          <div class="campo campo-responsivo">
+            <input type="text" id="apellidoPaterno" name="apellidoPaterno" [(ngModel)]="datos.apellidoPaterno" placeholder="Apellido paterno" required>
+          </div>
+  
+          <div class="campo campo-responsivo">
+            <input type="text" id="apellidoMaterno" name="apellidoMaterno" [(ngModel)]="datos.apellidoMaterno" placeholder="Apellido materno" required>
+          </div>
+  
+          <div class="campo campo-responsivo">
+            <input type="text" id="nombre" name="nombre" [(ngModel)]="datos.nombre" placeholder="Nombre" required>
+          </div>
+  
+          <div class="campo campo-responsivo">
+            <input type="text" id="nombreSocial" name="nombreSocial" [(ngModel)]="datos.nombreSocial" placeholder="Nombre (social)" required>
+          </div>
+  
+          <div class="campo campo-responsivo">
+            <input type="text" id="telefono" name="telefono" [(ngModel)]="datos.telefono" placeholder="Teléfono" required>
+          </div>
+  
+          <div class="campo campo-responsivo">
+            <input type="text" id="fechaNacimiento" name="fechaNacimiento" [(ngModel)]="datos.fechaNacimiento" placeholder="Fecha de nacimiento" required>
+            <!-- Considerando que tienes un componente de calendario para la fecha de nacimiento -->
+          </div>
+  
+          <div class="campo campo-responsivo">
+            <select id="genero" name="genero" [(ngModel)]="datos.genero" required>
+              <option value="" disabled selected>Género</option>
+              <!-- Opciones para el combobox -->
+            </select>
+          </div>
         </div>
-    </div>
-</div>
-
-
-
-
-<div class="row">
-    <div class="col-12">
-        <div class="card">
-            <div class="card-body">
-
-                <h4 style="display: flex;">Inicio lo que el paciente indica </h4>
-                 <li>el proque asiste al control</li> 
-            </div>
+      </div>
+  
+      <!-- Lo que el paciente indica -->
+      <div class="seccion-indicacion">
+        <h2 class="titulo-seccion">Lo que el paciente indica</h2>
+        <div class="campos-container">
+          <div class="campo campo-responsivo">
+            <textarea id="motivoConsulta" name="motivoConsulta" [(ngModel)]="datos.motivoConsulta" placeholder="El porqué asiste al control" required></textarea>
+          </div>
         </div>
-    </div>
-</div>
-
-
-
-<div class="row">
-    <div class="col-12">
-        <div class="card">
-            <div class="card-body">
-
-                <h4 style="display: flex;">Inicio observacion medica</h4>
-                    <li>sospecha del medico</li>
-                    <li>diagnosticos (combobox)</li>
-                    <li>combobox duracion de el control</li>
-                    <li>Fundamento de priorización</li>
-                    <li>Prioridad de Interconsulta Origen</li>
-                    <li>Sospecha de patología GES</li>                    
-                    <li>Fecha de solicitud de la Interconsulta</li>
-                    <li>si es un paciente alérgico (true o false)</li>
-                    <li>razón de derivación (reasonCode) </li>
-                    <li>especialidad medica de destino (combobox)</li>
-            </div>
+      </div>
+  
+      <!-- Observacion medica -->
+      <div class="seccion-observacion">
+        <h2 class="titulo-seccion">Observación médica</h2>
+        <div class="campos-container">
+          <div class="campo campo-responsivo">
+            <textarea id="sospechaMedico" name="sospechaMedico" [(ngModel)]="datos.sospechaMedico" placeholder="Sospecha del médico" required></textarea>
+          </div>
+  
+          <div class="campo campo-responsivo">
+            <select id="diagnosticos" name="diagnosticos" [(ngModel)]="datos.diagnosticos" required>
+              <option value="" disabled selected>Diagnósticos</option>
+              <!-- Opciones para el combobox -->
+            </select>
+          </div>
+  
+          <div class="campo campo-responsivo">
+            <select id="duracionControl" name="duracionControl" [(ngModel)]="datos.duracionControl" required>
+              <option value="" disabled selected>Duración del control</option>
+              <!-- Opciones para el combobox -->
+            </select>
+          </div>
+  
+          <div class="campo campo-responsivo">
+            <select id="fundamentoPriorizacion" name="fundamentoPriorizacion" [(ngModel)]="datos.fundamentoPriorizacion" required>
+              <option value="" disabled selected>Fundamento de priorización</option>
+              <!-- Opciones para el combobox -->
+            </select>
+          </div>
+  
+          <div class="campo campo-responsivo">
+            <input type="text" id="prioridadInterconsultaOrigen" name="prioridadInterconsultaOrigen" [(ngModel)]="datos.prioridadInterconsultaOrigen" placeholder="Prioridad de Interconsulta Origen" required>
+          </div>
+  
+          <div class="campo campo-responsivo">
+            <input type="checkbox" id="sospechaPatologiaGES" name="sospechaPatologiaGES" [(ngModel)]="datos.sospechaPatologiaGES">
+            <span>Sospecha de patología GES</span>
+          </div>
+  
+          <div class="campo campo-responsivo">
+            <input type="text" id="fechaSolicitudInterconsulta" name="fechaSolicitudInterconsulta" [(ngModel)]="datos.fechaSolicitudInterconsulta" placeholder="Fecha de solicitud de la Interconsulta" required>
+          </div>
+  
+          <div class="campo campo-responsivo">
+            <input type="checkbox" id="pacienteAlergico" name="pacienteAlergico" [(ngModel)]="datos.pacienteAlergico">
+            <span>Paciente alérgico</span>
+          </div>
+  
+          <div class="campo campo-responsivo">
+            <select id="razonDerivacion" name="razonDerivacion" [(ngModel)]="datos.razonDerivacion" required>
+              <option value="" disabled selected>Razón de derivación</option>
+              <!-- Opciones para el combobox -->
+            </select>
+          </div>
+  
+          <div class="campo campo-responsivo">
+            <select id="especialidadMedicaDestino" name="especialidadMedicaDestino" [(ngModel)]="datos.especialidadMedicaDestino" required>
+              <option value="" disabled selected>Especialidad médica de destino</option>
+              <!-- Opciones para el combobox -->
+            </select>
+          </div>
         </div>
+      </div>
     </div>
-</div>
+  
+    <!-- Botones -->
+    <div class="botones">
+      <button type="button" (click)="limpiarFormulario()">Limpiar</button>
+      <button type="submit">Guardar</button>
+    </div>
+  </form>
+  
+  <!-- Alertas -->
+  <div *ngIf="mostrarAlerta" class="alerta">
+    <!-- Mensaje de alerta -->
+  </div>
+  
