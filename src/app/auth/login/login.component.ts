@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoginForm } from 'src/app/models/interfaces/login-form.interface';
+import { LoginForm } from 'src/app/models/login-form.interface';
 import { LoginService } from 'src/app/services/login.service';
 import Swal from 'sweetalert2';
 
@@ -13,7 +13,7 @@ import Swal from 'sweetalert2';
 export class LoginComponent {
 
   public loginForm = this.fb.group({
-    correo:['alfonsoulloa.o@gmail.com', [Validators.required, Validators.email ] ],
+    correo:['esepulveda', [Validators.required, Validators.email ] ],
     contraseña: ['123456',[ Validators.required ]],
     recuerdame: [false]
   });

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { LoginForm } from '../models/interfaces/login-form.interface';
+import { LoginForm } from '../models/login-form.interface';
 import { environment } from 'src/environments/environments';
 import { tap } from 'rxjs';
 

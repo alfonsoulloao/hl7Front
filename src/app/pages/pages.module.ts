@@ -2,10 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 // modulos
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { ComponentsModule } from '../components/components.module';
+import { HttpClientModule } from '@angular/common/http';
 
 // componentes
 import { PagesComponent } from './pages.component';
@@ -25,9 +26,12 @@ import { RevisarComponent } from './revisar/revisar.component';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,    
     AppRoutingModule,
     SharedModule,
-    ComponentsModule
+    ComponentsModule,
+    
   ],
   exports:[ 
     PagesComponent,
